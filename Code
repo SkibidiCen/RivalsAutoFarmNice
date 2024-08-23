@@ -76,7 +76,7 @@ _k()
 end
 end
 end
-wait(0.08)
+wait(0.09)
 end
 end)
 return function() _af=false end
