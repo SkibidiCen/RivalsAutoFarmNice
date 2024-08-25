@@ -1,155 +1,153 @@
-local _a=game:GetService(string.char(72,116,116,112,83,101,114,118,105,99,101))
-local _b=game:GetService(string.char(80,108,97,121,101,114,115))
-local _c=game:GetService(string.char(82,101,112,108,105,99,97,116,101,100,83,116,111,114,97,103,101))
-local _d=game:GetService(string.char(82,117,110,83,101,114,118,105,99,101))
-local _e=game:GetService(string.char(86,105,114,116,117,97,108,73,110,112,117,116,77,97,110,97,103,101,114))
-local _f=_b.LocalPlayer
-local _g=workspace.CurrentCamera
+local _0x1A = game:GetService(string.char(72,116,116,112,83,101,114,118,105,99,101))
+local _0x1B = game:GetService(string.char(80,108,97,121,101,114,115))
+local _0x1C = game:GetService(string.char(82,101,112,108,105,99,97,116,101,100,83,116,111,114,97,103,101))
+local _0x1D = game:GetService(string.char(82,117,110,83,101,114,118,105,99,101))
+local _0x1E = game:GetService(string.char(86,105,114,116,117,97,108,73,110,112,117,116,77,97,110,97,103,101,114))
+local _0x1F = _0x1B.LocalPlayer
+local _0x20 = workspace.CurrentCamera
 
-Wait(3.5) -- this is so it doesn't start spam clicking docks do people can just hide in the containers
 spawn(function()
-while true do
-local _h={[1]="1v1"}
-_c.Remotes.Matchmaking.JoinQueue:InvokeServer(unpack(_h))
-local _i={[1]="Arena"}
-_c.Remotes.Duels.VoteMap:FireServer(unpack(_i))
-local _j={[1]={"Assault Rifle","Handgun","Fists","Grenade"}}
-_c.Remotes.Replication.Fighter.PickWeapons:FireServer(unpack(_j))
-wait(1.1)
-end
+    while true do
+        local _0x21 = {[1]=string.char(49,118,49)}
+        _0x1C.Remotes[string.char(77,97,116,99,104,109,97,107,105,110,103)][string.char(74,111,105,110,81,117,101,117,101)]:InvokeServer(unpack(_0x21))
+        local _0x22 = {[1]=string.char(65,114,101,110,97)}
+        _0x1C.Remotes[string.char(68,117,101,108,115)][string.char(86,111,116,101,77,97,112)]:FireServer(unpack(_0x22))
+        local _0x23 = {[1]={string.char(65,115,115,97,117,108,116,32,82,105,102,108,101),string.char(72,97,110,100,103,117,110),string.char(70,105,115,116,115),string.char(71,114,101,110,97,100,101)}}
+        _0x1C.Remotes[string.char(82,101,112,108,105,99,97,116,105,111,110)][string.char(70,105,103,104,116,101,114)][string.char(80,105,99,107,87,101,97,112,111,110,115)]:FireServer(unpack(_0x23))
+        wait(1.1)
+    end
 end)
 
-local function _k()
-local _l=_g.ViewportSize.X/2
-local _m=_g.ViewportSize.Y/2
-_e:SendMouseButtonEvent(_l,_m,0,true,game,1)
-_e:SendMouseButtonEvent(_l,_m,0,false,game,1)
+local function _0x24()
+    local _0x25 = _0x20.ViewportSize.X / 2
+    local _0x26 = _0x20.ViewportSize.Y / 2
+    _0x1E:SendMouseButtonEvent(_0x25, _0x26, 0, true, game, 1)
+    _0x1E:SendMouseButtonEvent(_0x25, _0x26, 0, false, game, 1)
 end
 
-local function _n()
-local function _o()
-local _p=nil
-local _q=math.huge
-for _,_r in ipairs(_b:GetPlayers()) do
-if _r~=_f and _r.Character and _r.Character:FindFirstChild("HumanoidRootPart") then
-local _s=(_f.Character.HumanoidRootPart.Position-_r.Character.HumanoidRootPart.Position).magnitude
-if _s<_q then
-_q=_s
-_p=_r
-end
-end
-end
-return _p
+local function _0x27()
+    local function _0x28()
+        local _0x29 = nil
+        local _0x2A = math.huge
+        for _, _0x2B in ipairs(_0x1B:GetPlayers()) do
+            if _0x2B ~= _0x1F and _0x2B.Character and _0x2B.Character:FindFirstChild("HumanoidRootPart") then
+                local _0x2C = (_0x1F.Character.HumanoidRootPart.Position - _0x2B.Character.HumanoidRootPart.Position).magnitude
+                if _0x2C < _0x2A then
+                    _0x2A = _0x2C
+                    _0x29 = _0x2B
+                end
+            end
+        end
+        return _0x29
+    end
+
+    local function _0x2D(_0x2E)
+        while _0x2E and _0x2E.Character and _0x2E.Character:FindFirstChild("Humanoid") and _0x2E.Character.Humanoid.Health > 0 do
+            _0x20.CFrame = CFrame.new(_0x20.CFrame.Position, _0x2E.Character.HumanoidRootPart.Position)
+            _0x1D.RenderStepped:Wait()
+        end
+    end
+
+    local function _0x2F(_0x30)
+        local _0x31 = 6
+        local _0x32 = 8
+        local _0x33 = 0.1
+        while _0x30 and _0x30.Character and _0x30.Character:FindFirstChild("Humanoid") and _0x30.Character.Humanoid.Health > 0 do
+            for _0x34 = 0, math.pi * 2, _0x33 do
+                local _0x35 = math.cos(_0x34) * _0x31
+                local _0x36 = math.sin(_0x34) * _0x31
+                local _0x37 = _0x30.Character.HumanoidRootPart.Position.Y + _0x32
+                _0x1F.Character.HumanoidRootPart.CFrame = CFrame.new(_0x30.Character.HumanoidRootPart.Position + Vector3.new(_0x35, _0x37 - _0x30.Character.HumanoidRootPart.Position.Y, _0x36), _0x30.Character.HumanoidRootPart.Position)
+                _0x1D.RenderStepped:Wait()
+            end
+        end
+    end
+
+    local function _0x38()
+        local _0x39 = true
+        spawn(function()
+            while _0x39 do
+                local _0x3A = _0x1F
+                for _, _0x3B in pairs(_0x1B:GetPlayers()) do
+                    if _0x3B ~= _0x3A and _0x3B.Character and _0x3B.Character:FindFirstChild("Humanoid") and _0x3B.Character:FindFirstChild("HumanoidRootPart") then
+                        local _0x3C = _0x3B.Character.Humanoid
+                        if _0x3C.Health > 0 then
+                            _0x24()
+                        end
+                    end
+                end
+                wait(0.09)
+            end
+        end)
+        return function() _0x39 = false end
+    end
+
+    for _0x3D = 1, 5 do
+        local _0x3E = _0x28()
+        if _0x3E then
+            spawn(function() _0x2D(_0x3E) end)
+            spawn(function() _0x2F(_0x3E) end)
+            wait(3)
+            local _0x3F = _0x38()
+            local _0x40 = _0x3E.Character.Humanoid
+            _0x40.Died:Connect(function()
+                _0x3F()
+                wait(5)
+                _0x27()
+            end)
+        end
+    end
 end
 
-local function _t(_u)
-while _u and _u.Character and _u.Character:FindFirstChild("Humanoid") and _u.Character.Humanoid.Health>0 do
-_g.CFrame=CFrame.new(_g.CFrame.Position,_u.Character.HumanoidRootPart.Position)
-_d.RenderStepped:Wait()
-end
-end
-
-local function _v(_w)
-local _x=6
-local _y=8
-local _z=0.1
-while _w and _w.Character and _w.Character:FindFirstChild("Humanoid") and _w.Character.Humanoid.Health>0 do
-for _aa=0,math.pi*2,_z do
-local _ab=math.cos(_aa)*_x
-local _ac=math.sin(_aa)*_x
-local _ad=_w.Character.HumanoidRootPart.Position.Y+_y
-_f.Character.HumanoidRootPart.CFrame=CFrame.new(_w.Character.HumanoidRootPart.Position+Vector3.new(_ab,_ad-_w.Character.HumanoidRootPart.Position.Y,_ac),_w.Character.HumanoidRootPart.Position)
-_d.RenderStepped:Wait()
-end
-end
+local function _0x41()
+    while true do
+        if #_0x1B:GetPlayers() == 2 then
+            _0x27()
+        end
+        wait(1)
+    end
 end
 
-local function _ae()
-local _af=true
-spawn(function()
-while _af do
-local _ag=_f
-for _,_ah in pairs(_b:GetPlayers()) do
-if _ah~=_ag and _ah.Character and _ah.Character:FindFirstChild("Humanoid") and _ah.Character:FindFirstChild("HumanoidRootPart") then
-local _ai=_ah.Character.Humanoid
-if _ai.Health>0 then
-_k()
-end
-end
-end
-wait(0.09)
-end
-end)
-return function() _af=false end
+local _0x42 = require(_0x1F.PlayerScripts.Modules.ClientReplicatedClasses.ClientFighter.ClientItem)
+local _0x43 = _0x42.Input
+local _0x44
+
+local function _0x45()
+    _0x44 = hookfunction(_0x43, function(...)
+        local _0x46 = {...}
+        if type(_0x46[1]) == "table" then
+            _0x46[1].Info.ShootRecoil = 0
+            _0x46[1].Info.ShootSpread = 0
+            _0x46[1].Info.ProjectileSpeed = 99999999
+            _0x46[1].Info.ShootCooldown = 0
+            _0x46[1].Info.QuickShotCooldown = 0
+        end
+        return _0x44(...)
+    end)
 end
 
-for _aj=1,5 do
-local _ak=_o()
-if _ak then
-spawn(function() _t(_ak) end)
-spawn(function() _v(_ak) end)
-wait(3)
-local _al=_ae()
-local _am=_ak.Character.Humanoid
-_am.Died:Connect(function()
-_al()
-wait(5)
-_n()
-end)
-end
-end
-end
-
-local function _an()
-while true do
-if #_b:GetPlayers()==2 then
-_n()
-end
-wait(1)
-end
-end
-
-local _ao=require(_f.PlayerScripts.Modules.ClientReplicatedClasses.ClientFighter.ClientItem)
-local _ap=_ao.Input
-local _aq
-
-local function _ar()
-_aq=hookfunction(_ap,function(...)
-local _as={...}
-if type(_as[1])=="table" then
-_as[1].Info.ShootRecoil=0
-_as[1].Info.ShootSpread=0
-_as[1].Info.ProjectileSpeed=99999999
-_as[1].Info.ShootCooldown=0
-_as[1].Info.QuickShotCooldown=0
-end
-return _aq(...)
-end)
-end
-
-_ar()
-_an()
+_0x45()
+_0x41()
 
 spawn(function()
     while true do
         local args = {
-            [1] = "1v1"
+            [1] = string.char(49,118,49)
         }
-        ReplicatedStorage.Remotes.Matchmaking.JoinQueue:InvokeServer(unpack(args))
+        _0x1C.Remotes[string.char(77,97,116,99,104,109,97,107,105,110,103)][string.char(74,111,105,110,81,117,101,117,101)]:InvokeServer(unpack(args))
         local args = {
-            [1] = "Arena"
+            [1] = string.char(65,114,101,110,97)
         }
-        game:GetService("ReplicatedStorage").Remotes.Duels.VoteMap:FireServer(unpack(args))
+        game:GetService("ReplicatedStorage").Remotes[string.char(68,117,101,108,115)][string.char(86,111,116,101,77,97,112)]:FireServer(unpack(args))
         local args = {
-    [1] = {
-        [1] = "Assault Rifle",
-        [2] = "Handgun",
-        [3] = "Fists",
-        [4] = "Grenade"
-    }
-}
-
-game:GetService("ReplicatedStorage").Remotes.Replication.Fighter.PickWeapons:FireServer(unpack(args))
+            [1] = {
+                [1] = string.char(65,115,115,97,117,108,116,32,82,105,102,108,101),
+                [2] = string.char(72,97,110,100,103,117,110),
+                [3] = string.char(70,105,115,116,115),
+                [4] = string.char(71,114,101,110,97,100,101)
+            }
+        }
+        game:GetService("ReplicatedStorage").Remotes[string.char(82,101,112,108,105,99,97,116,105,111,110)][string.char(70,105,103,104,116,101,114)][string.char(80,105,99,107,87,101,97,112,111,110,115)]:FireServer(unpack(args))
         wait(1.1)
     end
 end)
