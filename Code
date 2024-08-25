@@ -6,6 +6,7 @@ local _e=game:GetService(string.char(86,105,114,116,117,97,108,73,110,112,117,11
 local _f=_b.LocalPlayer
 local _g=workspace.CurrentCamera
 
+Wait(3.5) -- this is so it doesn't start spam clicking docks do people can just hide in the containers
 spawn(function()
 while true do
 local _h={[1]="1v1"}
